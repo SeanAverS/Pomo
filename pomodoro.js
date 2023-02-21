@@ -7,3 +7,10 @@ function timeConvert(number) {
     time = minutes + ":" + seconds;
 };
 
+const playBtn = document.getElementById('play-button');
+playBtn.addEventListener('click', pomodoro);
+
+function pomodoro() {
+    
+}
+
