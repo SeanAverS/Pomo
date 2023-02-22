@@ -23,5 +23,5 @@ function pomodoro() {
     } else {
         time = rest;
         counter++;
-    } 
+    } //console.log('current time: ' + time); 
 }
