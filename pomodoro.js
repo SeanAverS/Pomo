@@ -1,5 +1,3 @@
-let time = '';
-
 function timeConvert(number) {
     let minutes = Math.floor(number / 60);
     let seconds = number % 60;
@@ -14,7 +12,16 @@ playBtn.addEventListener('click', pomodoro);
 const focus = timeConvert(1500);
 const rest = timeConvert(300);
 
+let counter = 0;
+
 function pomodoro() {
-
+    //set pomodoro to focus or rest time  
+    let time = '';
+    if (counter % 2 === 0) {
+        time = focus;
+        counter++;
+    } else {
+        time = rest;
+        counter++;
+    } 
 }
-
