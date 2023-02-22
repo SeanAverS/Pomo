@@ -28,4 +28,11 @@ function pomodoro() {
         timePlaceHolder = 300;
         counter++;
     } //console.log('current time: ' + time); 
+    
+    //run pomodoro 
+    if (time === focus) {
+        console.log('focus time')
+    } else if (time === rest) {
+        console.log('rest time');
+    } 
 }
