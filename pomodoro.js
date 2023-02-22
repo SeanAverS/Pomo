@@ -14,14 +14,18 @@ const rest = timeConvert(300);
 
 let counter = 0;
 
+let timePlaceHolder = 0;
+
 function pomodoro() {
     //set pomodoro to focus or rest time  
     let time = '';
     if (counter % 2 === 0) {
         time = focus;
+        timePlaceHolder = 1500;
         counter++;
     } else {
         time = rest;
+        timePlaceHolder = 300;
         counter++;
     } //console.log('current time: ' + time); 
 }
