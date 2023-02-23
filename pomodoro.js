@@ -12,6 +12,8 @@ playBtn.addEventListener('click', pomodoro);
 const focus = timeConvert(1500);
 const rest = timeConvert(300);
 
+const timer = document.getElementById('timer');
+
 let counter = 0;
 
 let timePlaceHolder = 0;
@@ -22,17 +24,22 @@ function pomodoro() {
     if (counter % 2 === 0) {
         time = focus;
         timePlaceHolder = 1500;
-        counter++;
     } else {
         time = rest;
         timePlaceHolder = 300;
-        counter++;
     } //console.log('current time: ' + time); 
-    
-    //run pomodoro 
-    if (time === focus) {
-        console.log('focus time')
-    } else if (time === rest) {
-        console.log('rest time');
-    } 
+
+    currentTime = setInterval(function () {
+        if (timePlaceHolder >= 1) {
+            //display mm:ss format, but decrement time value
+            timer.textContent = timeConvert(timePlaceHolder);
+            timePlaceHolder--;
+        }
+        else {
+            clearInterval;
+            timer.textContent = time;
+        }
+    }, 1000);
 }
+
+
