@@ -12,17 +12,10 @@ playBtn.addEventListener('click', pomodoro);
 const timer = document.getElementById('timer');
 
 let counter = 0;
-
-let pomoTime = 0;
+let pomoTime = 5;
 
 function pomodoro() {
-    //set pomodoro to focus or rest time  
-    if (counter % 2 === 0) {
-        pomoTime = 1500;
-    } else {
-        pomoTime = 300;
-    } //console.log('current time: ' + time); 
-
+    
     currentTime = setInterval(function () {
         if (pomoTime >= 1) {
             //display mm:ss format, but decrement time value
@@ -30,8 +23,10 @@ function pomodoro() {
             pomoTime--;
         }
         else {
-            clearInterval;
+            clearInterval(currentTime);
             timer.textContent = timeConvert(pomoTime);
+            counter++;
+            console.log('counter');
         }
     }, 1000);
 }
@@ -40,8 +35,7 @@ const pauseBtn = document.getElementById('pause-button');
 pauseBtn.addEventListener('click', pauseButton);
 
 function pauseButton() {
-    clearInterval(currentTime); 
-    timer.innerHTML = timeConvert(pomoTime); 
+    clearInterval(currentTime);
 }
 
 
