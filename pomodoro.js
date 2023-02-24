@@ -42,4 +42,12 @@ function pomodoro() {
     }, 1000);
 }
 
+const pauseBtn = document.getElementById('pause-button');
+pauseBtn.addEventListener('click', pauseButton);
+
+function pauseButton() {
+    clearInterval(currentTime); 
+    timer.innerHTML = timeConversion(time); 
+}
+
 
