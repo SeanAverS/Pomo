@@ -13,25 +13,25 @@ const timer = document.getElementById('timer');
 
 let counter = 0;
 
-let timePlaceHolder = 0;
+let pomoTime = 0;
 
 function pomodoro() {
     //set pomodoro to focus or rest time  
     if (counter % 2 === 0) {
-        timePlaceHolder = 1500;
+        pomoTime = 1500;
     } else {
-        timePlaceHolder = 300;
+        pomoTime = 300;
     } //console.log('current time: ' + time); 
 
     currentTime = setInterval(function () {
-        if (timePlaceHolder >= 1) {
+        if (pomoTime >= 1) {
             //display mm:ss format, but decrement time value
-            timer.textContent = timeConvert(timePlaceHolder);
-            timePlaceHolder--;
+            timer.textContent = timeConvert(pomoTime);
+            pomoTime--;
         }
         else {
             clearInterval;
-            timer.textContent = timeConvert(timePlaceHolder);
+            timer.textContent = timeConvert(pomoTime);
         }
     }, 1000);
 }
@@ -41,7 +41,7 @@ pauseBtn.addEventListener('click', pauseButton);
 
 function pauseButton() {
     clearInterval(currentTime); 
-    timer.innerHTML = timeConversion(time); 
+    timer.innerHTML = timeConvert(pomoTime); 
 }
 
 
