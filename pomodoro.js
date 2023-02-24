@@ -9,9 +9,6 @@ function timeConvert(number) {
 const playBtn = document.getElementById('play-button');
 playBtn.addEventListener('click', pomodoro);
 
-const focus = timeConvert(1500);
-const rest = timeConvert(300);
-
 const timer = document.getElementById('timer');
 
 let counter = 0;
@@ -20,12 +17,9 @@ let timePlaceHolder = 0;
 
 function pomodoro() {
     //set pomodoro to focus or rest time  
-    let time = '';
     if (counter % 2 === 0) {
-        time = focus;
         timePlaceHolder = 1500;
     } else {
-        time = rest;
         timePlaceHolder = 300;
     } //console.log('current time: ' + time); 
 
@@ -37,7 +31,7 @@ function pomodoro() {
         }
         else {
             clearInterval;
-            timer.textContent = time;
+            timer.textContent = timeConvert(timePlaceHolder);
         }
     }, 1000);
 }
