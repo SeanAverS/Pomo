@@ -35,7 +35,7 @@ function pomodoro() {
             timer.textContent = timeConvert(pomoTime);
             counter++;
             console.log('counter: ' + counter);
-            setTime();
+            setTime(); //once pomoTime === 0 (times up)
             console.log('pomotime' + pomoTime)
         }
     }, 1000);
