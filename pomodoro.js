@@ -1,15 +1,10 @@
-function timeConvert(number) {
+function convertTime(number) {
     let minutes = Math.floor(number / 60);
     let seconds = number % 60;
     seconds < 10 ? seconds = "0" + seconds : "error"; //display "08" not "8"
-    time = minutes + ":" + seconds;
+    let time = minutes + ":" + seconds;
     return time;
 };
-
-const playBtn = document.getElementById('play-button');
-playBtn.addEventListener('click', pomodoro);
-
-const timer = document.getElementById('timer');
 
 let counter = 0;
 let pomoTime = 1500;
@@ -22,21 +17,24 @@ function setTime() {
     }
 }
 
-function pomodoro() {
+const timer = document.getElementById('timer');
 
+const playBtn = document.getElementById('play-button');
+playBtn.addEventListener('click', pomodoro);
+
+function pomodoro() {
     currentTime = setInterval(function () {
         if (pomoTime >= 1) {
             //display mm:ss format, but decrement time value
-            timer.textContent = timeConvert(pomoTime);
+            timer.textContent = convertTime(pomoTime);
             pomoTime--;
-        }
-        else {
+        } else {
             clearInterval(currentTime);
-            timer.textContent = timeConvert(pomoTime);
+            timer.textContent = convertTime(pomoTime);
             counter++;
-            console.log('counter: ' + counter);
             setTime(); //once pomoTime === 0 (times up)
-            console.log('pomotime' + pomoTime)
+            console.log('counter: ' + counter);
+            console.log('pomotime: ' + pomoTime)
         }
     }, 1000);
 }
