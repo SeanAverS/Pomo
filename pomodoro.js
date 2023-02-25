@@ -12,10 +12,18 @@ playBtn.addEventListener('click', pomodoro);
 const timer = document.getElementById('timer');
 
 let counter = 0;
-let pomoTime = 5;
+let pomoTime = 1500;
+
+function setTime() {
+    if (counter % 2 === 0) {
+        pomoTime = 1500;
+    } else {
+        pomoTime = 300;
+    }
+}
 
 function pomodoro() {
-    
+
     currentTime = setInterval(function () {
         if (pomoTime >= 1) {
             //display mm:ss format, but decrement time value
@@ -26,7 +34,9 @@ function pomodoro() {
             clearInterval(currentTime);
             timer.textContent = timeConvert(pomoTime);
             counter++;
-            console.log('counter');
+            console.log('counter: ' + counter);
+            setTime();
+            console.log('pomotime' + pomoTime)
         }
     }, 1000);
 }
