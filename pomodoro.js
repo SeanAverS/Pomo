@@ -31,12 +31,27 @@ function pomodoro() {
         } else {
             clearInterval(currentTime);
             timer.textContent = convertTime(pomoTime);
+            console.log(counter);
+            //condition should make totalPomoTime = 5 first time
+            totalPomo();
             counter++;
             setTime(); //once pomoTime === 0 (times up)
             console.log('counter: ' + counter);
-            console.log('pomotime: ' + pomoTime)
         }
     }, 1000);
+}
+
+const displayPomoTime = document.getElementById('total-time');
+
+let totalPomoTime = 0;
+
+function totalPomo() {
+    if (counter % 2 === 0) {
+        totalPomoTime += 1500; //add total work time to global var
+    } else {
+        totalPomoTime += 0;
+    } //console.log('total work: ' + totalPomoTime);
+      displayPomoTime.textContent = totalPomoTime;
 }
 
 const pauseBtn = document.getElementById('pause-button');
@@ -45,5 +60,4 @@ pauseBtn.addEventListener('click', pauseButton);
 function pauseButton() {
     clearInterval(currentTime);
 }
-
 
