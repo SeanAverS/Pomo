@@ -51,7 +51,7 @@ function totalPomo() {
     } else {
         totalPomoTime += 0;
     } //console.log('total work: ' + totalPomoTime);
-      displayPomoTime.textContent = convertTime(totalPomoTime) + ' minutes. Great work so far';
+      displayPomoTime.textContent = convertTime(totalPomoTime) + ' minutes so far. Great work!';
 }
 
 const pauseBtn = document.getElementById('pause-button');
