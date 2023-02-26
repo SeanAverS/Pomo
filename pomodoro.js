@@ -33,6 +33,7 @@ function pomodoro() {
             timer.textContent = convertTime(pomoTime);
             console.log(counter);
             totalPomo();
+            breakOrWork();
             counter++;
             setTime(); //once pomoTime === 0 (times up)
             console.log('counter: ' + counter);
@@ -58,5 +59,17 @@ pauseBtn.addEventListener('click', pauseButton);
 
 function pauseButton() {
     clearInterval(currentTime);
+}
+
+const breakOrWorkMsg = document.getElementById('msg');
+
+breakOrWorkMsg.addEventListener('click', breakOrWork);
+
+function breakOrWork() {
+    if (counter % 2 === 0) {
+        breakOrWorkMsg.textContent = 'Break Time!';
+    } else {
+        breakOrWorkMsg.textContent = 'Work Time!';
+    }
 }
 
