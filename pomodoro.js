@@ -7,13 +7,13 @@ function convertTime(number) {
 };
 
 let counter = 0;
-let pomoTime = 1500;
+let pomoTime = 5;
 
 function setTime() {
     if (counter % 2 === 0) {
-        pomoTime = 1500;
+        pomoTime = 5;
     } else {
-        pomoTime = 300;
+        pomoTime = 3;
     }
 }
 
@@ -32,7 +32,6 @@ function pomodoro() {
             clearInterval(currentTime);
             timer.textContent = convertTime(pomoTime);
             console.log(counter);
-            //condition should make totalPomoTime = 5 first time
             totalPomo();
             counter++;
             setTime(); //once pomoTime === 0 (times up)
