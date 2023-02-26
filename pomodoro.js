@@ -50,7 +50,7 @@ function totalPomo() {
     } else {
         totalPomoTime += 0;
     } //console.log('total work: ' + totalPomoTime);
-      displayPomoTime.textContent = totalPomoTime;
+      displayPomoTime.textContent = convertTime(totalPomoTime) + ' minutes. Great work!';
 }
 
 const pauseBtn = document.getElementById('pause-button');
