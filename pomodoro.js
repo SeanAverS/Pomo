@@ -10,15 +10,15 @@ function convertTime(number) {
 
 //Display total work time on page 
 const displayPomoTime = document.getElementById('total-time');
-let totalPomoTime = 0;
+let totalTime = 0;
 
-function totalPomo() {
+function totalPomoTime() {
     if (counter % 2 === 0) {
-        totalPomoTime += 1500; //add time to global var
+        totalTime += 1500; //add time to global var
     } else {
-        totalPomoTime += 0;
+        totalTime += 0;
     } //console.log('total work: ' + totalPomoTime);
-      displayPomoTime.textContent = convertTime(totalPomoTime) + ' minutes so far. Great work!';
+      displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. Great work!';
 }
 
 //Display work/break message after time ends
@@ -61,7 +61,7 @@ function pomodoro() {
             clearInterval(currentTime);
             timer.textContent = convertTime(pomoTime);
             //console.log('counter b4 increment: ' + counter);
-            totalPomo();
+            totalPomoTime();
             breakOrWork();
             counter++;
             setTime(); 
@@ -76,4 +76,4 @@ pauseBtn.addEventListener('click', pauseButton);
 
 function pauseButton() {
     clearInterval(currentTime);
-} 
+}  
