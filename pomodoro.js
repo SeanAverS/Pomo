@@ -23,9 +23,9 @@ function totalPomoTime() {
 
 //Display work/break message after time ends
 const breakOrWorkMsg = document.getElementById('msg');
-breakOrWorkMsg.addEventListener('click', breakOrWork);
+breakOrWorkMsg.addEventListener('click', breakOrWorkTime);
 
-function breakOrWork() {
+function breakOrWorkTime() {
     if (counter % 2 === 0) {
         breakOrWorkMsg.textContent = 'Break Time!';
     } else {
@@ -37,7 +37,7 @@ function breakOrWork() {
 let counter = 0;
 let pomoTime = 5;
 
-function setTime() {
+function setPomoTime() {
     if (counter % 2 === 0) {
         pomoTime = 5;
     } else {
@@ -62,9 +62,9 @@ function pomodoro() {
             timer.textContent = convertTime(pomoTime);
             //console.log('counter b4 increment: ' + counter);
             totalPomoTime();
-            breakOrWork();
+            breakOrWorkTime();
             counter++;
-            setTime(); 
+            setPomoTime(); 
             //console.log('counter after increment: ' + counter);
         }
     }, 1000);
