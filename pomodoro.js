@@ -68,7 +68,7 @@ function pomodoro() {
             //display mm:ss format, but decrement time value
             timer.textContent = convertTime(pomoTime);
             pomoTime--;        
-            totalTimeSoFar += 1;
+            timeSoFar();
             //console.log(totalTimeSoFar);  
         } else { //once pomoTime === 0 
             clearInterval(currentTime);
@@ -90,3 +90,10 @@ pauseBtn.addEventListener('click', pauseButton);
 function pauseButton() {
     clearInterval(currentTime);
 }  
+
+pauseBtn.addEventListener('click', timeOnPause)
+
+function timeOnPause() {
+    let x = convertTime(totalTimeSoFar);
+    console.log(x);
+}
