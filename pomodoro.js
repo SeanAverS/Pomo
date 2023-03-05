@@ -18,7 +18,7 @@ function totalPomoTime() {
     } else {
         totalTime += 0;
     } //console.log('total work: ' + totalPomoTime);
-      displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. Great work!';
+      displayPomoTime.textContent = convertTime(totalTimeSoFar) + ' minutes so far. Great work!';
 }
 
 //Display work/break message after time ends
