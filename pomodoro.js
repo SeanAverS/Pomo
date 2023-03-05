@@ -67,7 +67,9 @@ function pomodoro() {
         if (pomoTime >= 1) {
             //display mm:ss format, but decrement time value
             timer.textContent = convertTime(pomoTime);
-            pomoTime--;           
+            pomoTime--;        
+            totalTimeSoFar += 1;
+            //console.log(totalTimeSoFar);  
         } else { //once pomoTime === 0 
             clearInterval(currentTime);
             timer.textContent = convertTime(pomoTime);
