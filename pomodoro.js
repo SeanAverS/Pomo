@@ -45,6 +45,17 @@ function setPomoTime() {
     }
 }
 
+//add up total time during pomo 
+let totalTimeSoFar = 0;
+
+function timeSoFar() {
+    if (counter % 2 === 0) {
+       totalTimeSoFar += 1
+    } else {
+        totalTimeSoFar += 0;
+    }
+}
+
 //Pomodoro Timer
 const timer = document.getElementById('timer');
 
@@ -56,7 +67,7 @@ function pomodoro() {
         if (pomoTime >= 1) {
             //display mm:ss format, but decrement time value
             timer.textContent = convertTime(pomoTime);
-            pomoTime--;
+            pomoTime--;           
         } else { //once pomoTime === 0 
             clearInterval(currentTime);
             timer.textContent = convertTime(pomoTime);
