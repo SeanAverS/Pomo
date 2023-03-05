@@ -14,7 +14,7 @@ let totalTime = 0;
 
 function totalPomoTime() {
     if (counter % 2 === 0) {
-        totalTime += 1500; //add time to global var
+        totalTime += totalTimeSoFar; //add time to global var
     } else {
         totalTime += 0;
     } //console.log('total work: ' + totalPomoTime);
