@@ -91,3 +91,11 @@ function pauseButton() {
     clearInterval(currentTime);
 }
 
+pauseBtn.addEventListener('click', timeOnPause)
+
+function timeOnPause() {
+    if (totalTimeSoFar >= 60 && counter % 2 === 0) {
+        let convertTimeSoFar = convertTime(totalTimeSoFar);
+        displayPomoTime.textContent = convertTimeSoFar + ' minutes and seconds so far. Great work!'
+    }
+}
