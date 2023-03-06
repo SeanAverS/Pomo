@@ -8,6 +8,20 @@ function convertTime(number) {
     return time;
 };
 
+//Next 4 functions test conditions w/ this 
+let counter = 0;
+
+//Add up total time during pomo 
+let totalTimeSoFar = 0;
+
+function timeSoFar() {
+    if (counter % 2 === 0) {
+        totalTimeSoFar += 1
+    } else {
+        totalTimeSoFar += 0;
+    }
+}
+
 //Display total work time on page 
 const displayPomoTime = document.getElementById('total-time');
 let totalTime = 0;
@@ -34,7 +48,6 @@ function breakOrWorkTime() {
 }
 
 //Set pomoTime var to work/break time based on global counter
-let counter = 0;
 let pomoTime = 5;
 
 function setPomoTime() {
@@ -42,17 +55,6 @@ function setPomoTime() {
         pomoTime = 5;
     } else {
         pomoTime = 3;
-    }
-}
-
-//add up total time during pomo 
-let totalTimeSoFar = 0;
-
-function timeSoFar() {
-    if (counter % 2 === 0) {
-        totalTimeSoFar += 1
-    } else {
-        totalTimeSoFar += 0;
     }
 }
 
@@ -91,6 +93,7 @@ function pauseButton() {
     clearInterval(currentTime);
 }
 
+//Display total time in mm:ss when pause clicked
 pauseBtn.addEventListener('click', timeOnPause)
 
 function timeOnPause() {
