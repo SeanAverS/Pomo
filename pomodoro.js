@@ -3,7 +3,7 @@ function convertTime(number) {
     let minutes = Math.floor(number / 60);
     let seconds = number % 60;
     //display "08" not "8" for ex.
-    seconds < 10 ? seconds = "0" + seconds : "error"; 
+    seconds < 10 ? seconds = "0" + seconds : "error";
     let time = minutes + ":" + seconds;
     return time;
 };
@@ -14,11 +14,11 @@ let totalTime = 0;
 
 function totalPomoTime() {
     if (counter % 2 === 0) {
-        totalTime += totalTimeSoFar; //add time to global var
+        totalTime += 1500; //add time to global var
     } else {
         totalTime += 0;
     } //console.log('total work: ' + totalPomoTime);
-      displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. Great work!';
+    displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. Great work!';
 }
 
 //Display work/break message after time ends
@@ -50,7 +50,7 @@ let totalTimeSoFar = 0;
 
 function timeSoFar() {
     if (counter % 2 === 0) {
-       totalTimeSoFar += 1
+        totalTimeSoFar += 1
     } else {
         totalTimeSoFar += 0;
     }
@@ -67,7 +67,7 @@ function pomodoro() {
         if (pomoTime >= 1) {
             //display mm:ss format, but decrement time value
             timer.textContent = convertTime(pomoTime);
-            pomoTime--;        
+            pomoTime--;
             timeSoFar();
             //console.log(totalTimeSoFar);  
         } else { //once pomoTime === 0 
@@ -77,7 +77,7 @@ function pomodoro() {
             totalPomoTime();
             breakOrWorkTime();
             counter++;
-            setPomoTime(); 
+            setPomoTime();
             //console.log('counter after increment: ' + counter);
         }
     }, 1000);
@@ -89,11 +89,5 @@ pauseBtn.addEventListener('click', pauseButton);
 
 function pauseButton() {
     clearInterval(currentTime);
-}  
-
-pauseBtn.addEventListener('click', timeOnPause)
-
-function timeOnPause() {
-    let x = convertTime(totalTimeSoFar);
-    console.log(x);
 }
+
