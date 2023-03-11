@@ -24,16 +24,26 @@ function timeSoFar() {
 
 //Display total work time on page 
 const displayPomoTime = document.getElementById('total-time');
-let totalTime = 0;
+let totalTime = 0; //change num to test w/ below conditions 
 
 function totalPomoTime() {
-    if (counter % 2 === 0) {
+    if (counter % 2 === 0 && totalTime >= 18000) { //5 Hours
         totalTime += 1500; //add time to global var
+        displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. INCREDIBLE!! but maybe take a rest for today.';
+    } else if (counter % 2 === 0 && totalTime >= 14400) { //4 Hours 
+        totalTime += 1500;
+        displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. WOW LOOK AT YOU!!'
+    } else if (counter % 2 === 0) {
+        totalTime += 1500;
+        displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. Great Work!';
     } else {
-        totalTime += 0;
-    } //console.log('total work: ' + totalPomoTime);
-    displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. Great work!';
-}
+        //totalTime += 0;
+        displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. Great Work!'; //duplicate msg for when counter not % 2
+    }
+
+    //console.log('counter' + counter);
+    //console.log('totalTime var value: ' + totalTime);
+} 
 
 //Display work/break message after time ends
 const breakOrWorkMsg = document.getElementById('msg');
