@@ -11,7 +11,7 @@ function convertTime(number) {
 //Next 4 functions test conditions w/ this 
 let counter = 0;
 
-//Add up total time during pomo 
+//Add up total time during pomodoro()
 let totalTimeSoFar = 0;
 
 function timeSoFar() {
@@ -45,7 +45,7 @@ function totalPomoTime() {
     //console.log('totalTime var value: ' + totalTime);
 } 
 
-//Display work/break message after time ends
+//Display work/break message on page after time ends
 const breakOrWorkMsg = document.getElementById('msg');
 breakOrWorkMsg.addEventListener('click', breakOrWorkTime);
 
@@ -109,7 +109,7 @@ function pauseButton() {
     playBtn.addEventListener('click', pomodoro);
 }
 
-//Display total time in mm:ss when pause button clicked
+//Display total time in mm:ss on page when pause button clicked
 pauseBtn.addEventListener('click', timeOnPause)
 
 function timeOnPause() {
