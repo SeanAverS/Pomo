@@ -75,6 +75,8 @@ const playBtn = document.getElementById('play-button');
 playBtn.addEventListener('click', pomodoro);
 
 function pomodoro() {
+    playBtn.removeEventListener('click', pomodoro) //disable multiple clicks
+    
     currentTime = setInterval(function () {
         if (pomoTime >= 1) {
             //display mm:ss format, but decrement time value
@@ -91,6 +93,8 @@ function pomodoro() {
             counter++;
             setPomoTime();
             //console.log('counter after increment: ' + counter);
+            //enable pomodoro() click after times up  
+            playBtn.addEventListener('click', pomodoro);  
         }
     }, 1000);
 }
@@ -101,6 +105,8 @@ pauseBtn.addEventListener('click', pauseButton);
 
 function pauseButton() {
     clearInterval(currentTime);
+    //enable pomodoro() click after pause button pressed  
+    playBtn.addEventListener('click', pomodoro);
 }
 
 //Display total time in mm:ss when pause button clicked
