@@ -29,7 +29,7 @@ let totalTime = 0; //change num to test w/ below conditions
 function totalPomoTime() {
     if (counter % 2 === 0 && totalTime >= 18000) { //5 Hours
         totalTime += 1500; //add time to global var
-        displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. INCREDIBLE!! but maybe take a rest for today.';
+        displayPomoTime.textContent = convertTime(totalTime) + " minutes so far. INCREDIBLE!! but maybe take a rest for today.'";
     } else if (counter % 2 === 0 && totalTime >= 14400) { //4 Hours 
         totalTime += 1500;
         displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. WOW LOOK AT YOU!!'
@@ -37,7 +37,7 @@ function totalPomoTime() {
         totalTime += 1500;
         displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. Great Work!';
     } else {
-        //totalTime += 0;
+        totalTime += 0;
         displayPomoTime.textContent = convertTime(totalTime) + ' minutes so far. Great Work!'; //duplicate msg for when counter not % 2
     }
 
@@ -57,7 +57,7 @@ function breakOrWorkTime() {
     }
 }
 
-//Set pomoTime var to work/break time based on global counter
+//Set pomoTime var to work/break time 
 let pomoTime = 5;
 
 function setPomoTime() {
@@ -95,7 +95,7 @@ function pomodoro() {
     }, 1000);
 }
 
-//Pause Timer
+//Pause Pomodoro Timer
 const pauseBtn = document.getElementById('pause-button');
 pauseBtn.addEventListener('click', pauseButton);
 
@@ -103,11 +103,11 @@ function pauseButton() {
     clearInterval(currentTime);
 }
 
-//Display total time in mm:ss when pause clicked
+//Display total time in mm:ss when pause button clicked
 pauseBtn.addEventListener('click', timeOnPause)
 
 function timeOnPause() {
-    if (totalTimeSoFar >= 60 && counter % 2 === 0) {
+    if (counter % 2 === 0) {
         let convertTimeSoFar = convertTime(totalTimeSoFar);
         displayPomoTime.textContent = convertTimeSoFar + ' minutes and seconds so far. Great work!'
     }
