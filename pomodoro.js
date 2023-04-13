@@ -43,7 +43,7 @@ function totalPomoTime() {
 
     //console.log('counter' + counter);
     //console.log('totalTime var value: ' + totalTime);
-} 
+}
 
 //Display work/break message on page after time ends
 const breakOrWorkMsg = document.getElementById('msg');
@@ -76,7 +76,7 @@ playBtn.addEventListener('click', pomodoro);
 
 function pomodoro() {
     playBtn.removeEventListener('click', pomodoro) //disable multiple clicks
-    
+
     currentTime = setInterval(function () {
         if (pomoTime >= 1) {
             //display mm:ss format, but decrement time value
@@ -92,9 +92,10 @@ function pomodoro() {
             breakOrWorkTime();
             counter++;
             setPomoTime();
+            timeOnPause();
             //console.log('counter after increment: ' + counter);
             //enable pomodoro() click after times up  
-            playBtn.addEventListener('click', pomodoro);  
+            playBtn.addEventListener('click', pomodoro);
         }
     }, 1000);
 }
@@ -113,8 +114,15 @@ function pauseButton() {
 pauseBtn.addEventListener('click', timeOnPause)
 
 function timeOnPause() {
-    if (totalTimeSoFar >= 60 && counter % 2 === 0) {
-        let convertTimeSoFar = convertTime(totalTimeSoFar);
-        displayPomoTime.textContent = convertTimeSoFar + ' minutes and seconds so far. Keep going!'
-    } 
+    let convertTimeSoFar = convertTime(totalTimeSoFar);
+
+    if (totalTimeSoFar >= 18000 && counter % 2 === 0) { //5 Hours
+        displayPomoTime.textContent = convertTimeSoFar + ' minutes and seconds so far. Maybe take a break for today...';
+    } else if (totalTimeSoFar >= 14400 && counter % 2 === 0) { //4 Hours
+        displayPomoTime.textContent = convertTimeSoFar + ' minutes and seconds so far. Awesome! Let"s call it a day.';
+    } else if (totalTimeSoFar >= 3000 & counter % 2 === 0) { //1 Hour 
+        displayPomoTime.textContent = convertTimeSoFar + ' minutes and seconds so far. Great Work!!';
+    } else {
+        displayPomoTime.textContent = convertTimeSoFar + ' minutes and seconds so far. Keep going!';
+    }
 }
