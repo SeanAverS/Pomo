@@ -114,6 +114,7 @@ function pauseButton() {
 pauseBtn.addEventListener('click', timeOnPause)
 
 function timeOnPause() {
+    //change 'totalTimeSoFar' value to test conditions
     let convertTimeSoFar = convertTime(totalTimeSoFar);
 
     if (totalTimeSoFar >= 18000 && counter % 2 === 0) { //5 Hours
