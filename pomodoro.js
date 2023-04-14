@@ -47,7 +47,6 @@ function totalPomoTime() {
 
 //Display work/break message on page after time ends
 const breakOrWorkMsg = document.getElementById('msg');
-breakOrWorkMsg.addEventListener('click', breakOrWorkTime);
 
 function breakOrWorkTime() {
     if (counter % 2 === 0) {
