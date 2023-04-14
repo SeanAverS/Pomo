@@ -23,10 +23,20 @@ body {
 
 #title {
     text-decoration: underline;
+    margin-bottom: -15px;
 }
 
 #total-time {
     font-size: 30px;
+} 
+
+#timer {
+    margin-bottom: -5px;
+}
+
+#msg {
+    margin-bottom: -30px;
+    color: white;
 }
 
 #buttons {
