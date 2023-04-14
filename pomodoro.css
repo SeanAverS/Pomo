@@ -16,7 +16,6 @@ body {
 #main-area {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     min-width: 100%;
     font-size: 8em;
     text-align: center;
