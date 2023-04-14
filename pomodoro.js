@@ -123,7 +123,7 @@ function timeOnPause() {
         displayPomoTime.textContent = convertTimeSoFar + ' minutes and seconds so far. Awesome! Let"s call it a day.';
     } else if (totalTimeSoFar >= 3000 & counter % 2 === 0) { //1 Hour 
         displayPomoTime.textContent = convertTimeSoFar + ' minutes and seconds so far. Great Work!!';
-    } else {
+    } else if (totalTimeSoFar >= 60 && counter % 2 === 0) {
         displayPomoTime.textContent = convertTimeSoFar + ' minutes and seconds so far. Keep going!';
     }
 }
