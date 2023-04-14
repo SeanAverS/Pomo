@@ -39,6 +39,11 @@ body {
     color: white;
 }
 
+#total-time {
+    font-size: 50px;
+    margin-top: 7px;
+}
+
 #buttons {
     width: 80%;
     display: flex;
@@ -59,4 +64,3 @@ body {
     transform: scale(0.9);
     background-color: rgb(227, 226, 226);
 }
-
