@@ -23,3 +23,12 @@ body {
 #total-time {
     font-size: 30px;
 }
+
+#buttons {
+    width: 80%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: space-evenly;
+}
