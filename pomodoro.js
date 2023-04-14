@@ -58,13 +58,13 @@ function breakOrWorkTime() {
 }
 
 //Set pomoTime var to work/break time 
-let pomoTime = 5;
+let pomoTime = 1500;
 
 function setPomoTime() {
     if (counter % 2 === 0) {
-        pomoTime = 5;
+        pomoTime = 1500;
     } else {
-        pomoTime = 3;
+        pomoTime = 300;
     }
 }
 
