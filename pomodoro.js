@@ -51,9 +51,9 @@ breakOrWorkMsg.addEventListener('click', breakOrWorkTime);
 
 function breakOrWorkTime() {
     if (counter % 2 === 0) {
-        breakOrWorkMsg.textContent = 'Break Time!';
+        breakOrWorkMsg.textContent = 'Break';
     } else {
-        breakOrWorkMsg.textContent = 'Work Time!';
+        breakOrWorkMsg.textContent = 'Work';
     }
 }
 
