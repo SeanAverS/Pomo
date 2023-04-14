@@ -45,7 +45,7 @@ body {
 }
 
 #buttons {
-    width: 80%;
+    width: 20%;
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -64,3 +64,27 @@ body {
     transform: scale(0.9);
     background-color: rgb(227, 226, 226);
 }
+
+
+/*Media Queries */
+
+/*Tablet*/
+@media only screen and (max-width: 1363px) {
+    #buttons {
+        width: 30%;
+    }
+}
+
+/*Mobile */
+@media only screen and (max-width: 888px) {
+    #buttons {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 544px) {
+    #buttons {
+        width: 70%;
+    }
+}
+
