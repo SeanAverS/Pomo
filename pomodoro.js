@@ -73,6 +73,12 @@ const timer = document.getElementById('timer');
 const playBtn = document.getElementById('play-button');
 playBtn.addEventListener('click', pomodoro);
 
+//When pomodoro time is zero
+const soundEffect = new Audio('call-to-attention-123107.mp3');
+function timesUp() {
+    soundEffect.play();
+}
+
 function pomodoro() {
     playBtn.removeEventListener('click', pomodoro) //disable multiple clicks
 
@@ -84,6 +90,7 @@ function pomodoro() {
             timeSoFar();
             //console.log(totalTimeSoFar);  
         } else { //once pomoTime === 0 
+            timesUp();
             clearInterval(currentTime);
             timer.textContent = convertTime(pomoTime);
             //console.log('counter b4 increment: ' + counter);
