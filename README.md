@@ -12,3 +12,10 @@ As it says first ever project, a lot of things to manage(sorry for the messy cod
 Improvements and Features
 - Have a function where you can set the Work or Break time yourself 
 - Don't make the 'counter' variable responsible for running most of the functions(boolean inside function to run them instead)
+
+# Installation 
+
+1. Clone the repo your machine - `git clone`
+2. Navigate to the project dir - `cd/Pomo`
+3. Install dependencies - `npm install`
+4. Run project - `npm start`
